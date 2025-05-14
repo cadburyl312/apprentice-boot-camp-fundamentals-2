@@ -11,7 +11,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class BowlingTest {
     @Test
-    public void scoreBowlingGame_whenGutterBowlGame_returnZero() {
+    public void scoreBowlingGame_whenGutterBowlGame_scoreGameCorrectly() {
         List<Integer> zeros = new ArrayList<>(Collections.nCopies(20, 0));
 
         Integer score = Bowling.scoreGame(zeros);
@@ -20,7 +20,7 @@ public class BowlingTest {
     }
 
     @Test
-    public void scoreBowlingGame_whenScoringGameNoSpecialRolls() {
+    public void scoreBowlingGame_whenScoringGameNoSpecialRolls_scoreGameCorrectly() {
         List<Integer> scores = new ArrayList<>(Collections.nCopies(20, 1));
 
         Integer score = Bowling.scoreGame(scores);
@@ -65,7 +65,7 @@ public class BowlingTest {
     }
 
     @Test
-    public void scoreBowlingGame_whenScoringGamePerfectGame() {
+    public void scoreBowlingGame_whenScoringGamePerfectGame_scoreGameCorrectly() {
         List<Integer> scores = new ArrayList<>(Collections.nCopies(12, 10));
 
         Integer score = Bowling.scoreGame(scores);
