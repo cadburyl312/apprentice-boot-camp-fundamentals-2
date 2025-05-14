@@ -26,6 +26,13 @@ public class BowlingTest {
         Integer score = Bowling.scoreGame(scores);
 
         assertThat(score).isEqualTo(20);
+    }    @Test
+    public void scoreBowlingGame_whenScoringGamePerfectGame() {
+        List<Integer> scores = new ArrayList<>(Collections.nCopies(12, 10));
+
+        Integer score = Bowling.scoreGame(scores);
+
+        assertThat(score).isEqualTo(300);
     }
 
     @Test
