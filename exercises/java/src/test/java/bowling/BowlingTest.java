@@ -27,4 +27,22 @@ public class BowlingTest {
 
         assertThat(score).isEqualTo(20);
     }
+
+    @Test
+    public void scoreBowlingGame_whenScoringGameWithSpare_scoreGameCorrectly() {
+        List<Integer> scores =  List.of(1, 9, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+        Integer score = Bowling.scoreGame(scores);
+
+        assertThat(score).isEqualTo(12);
+    }
+
+    @Test
+    public void scoreBowlingGame_whenScoringGameStrike_scoreGameCorrectly() {
+        List<Integer> scores =  List.of(10, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+        Integer score = Bowling.scoreGame(scores);
+
+        assertThat(score).isEqualTo(14);
+    }
 }
