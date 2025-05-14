@@ -21,10 +21,10 @@ public class BowlingTest {
 
     @Test
     public void scoreBowlingGame_whenScoringGameNoSpecialRolls() {
-        List<Integer> scores = new ArrayList<>(Collections.nCopies(20, 4));
+        List<Integer> scores = new ArrayList<>(Collections.nCopies(20, 1));
 
         Integer score = Bowling.scoreGame(scores);
 
-        assertThat(score).isEqualTo(80);
+        assertThat(score).isEqualTo(20);
     }
 }
