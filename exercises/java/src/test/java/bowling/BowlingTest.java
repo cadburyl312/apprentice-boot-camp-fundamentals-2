@@ -45,4 +45,13 @@ public class BowlingTest {
 
         assertThat(score).isEqualTo(14);
     }
+
+    @Test
+    public void scoreBowlingGame_whenScoringGameStrikeAndSpare_scoreGameCorrectly() {
+        List<Integer> scores =  List.of(10, 9, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+        Integer score = Bowling.scoreGame(scores);
+
+        assertThat(score).isEqualTo(32);
+    }
 }
