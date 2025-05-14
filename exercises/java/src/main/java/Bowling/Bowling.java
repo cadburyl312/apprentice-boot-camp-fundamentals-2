@@ -5,23 +5,22 @@ import java.util.List;
 public class Bowling {
     public static Integer scoreGame(List<Integer> rolls) {
         int score = 0;
-        int frameCount = 0;
-        for (int i = 0; i < rolls.size(); i+=2) {
+        int i = 0;
+        for (int frameCount = 0; frameCount < 10; frameCount+=1) {
             if (rolls.get(i) == 10) {
                 score += 10 + rolls.get(i + 1) + rolls.get(i + 2);
-                i -= 1;
-                frameCount ++;
-                if (frameCount == 10) {break;}
-                continue;
+                i ++;
             }
-            int frameScore;
-            frameScore = rolls.get(i) + rolls.get(i + 1);
-            if (frameScore == 10) {
-                frameScore += rolls.get(i + 2);
-                if (frameCount == 10) {break;}
+            else {
+                int frameScore;
+                frameScore = rolls.get(i) + rolls.get(i + 1);
+
+                if (frameScore == 10) {
+                    frameScore += rolls.get(i + 2);
+                }
+                score += frameScore;
+                i += 2;
             }
-            score += frameScore;
-            frameCount ++;
         }
         return score;
     }
